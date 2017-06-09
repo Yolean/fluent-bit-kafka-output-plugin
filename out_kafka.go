@@ -23,6 +23,8 @@ func FLBPluginInit(ctx unsafe.Pointer) int {
     return output.FLB_ERROR
   }
 
+  fmt.Printf("Up and running")
+
   return output.FLBPluginRegister(ctx, "out_kafka", "out_kafka GO!")
 }
 
@@ -33,6 +35,8 @@ func FLBPluginFlush(data unsafe.Pointer, length C.int, tag *C.char) int {
   var b []byte
   var m interface{}
   var err error
+
+  fmt.Printf("At flush")
 
   b = C.GoBytes(data, length)
   dec := codec.NewDecoderBytes(b, h)
