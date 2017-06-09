@@ -12,7 +12,7 @@ import (
   "C"
 )
 
-var brokerList []string = []string{"kafka-0.kafka.default.svc.cluster.local:9092"}
+var brokerList []string = []string{"kafka-0.broker.kafka.svc.cluster.local:9092","kafka-1.broker.kafka.svc.cluster.local:9092","kafka-2.broker.kafka.svc.cluster.local:9092"}
 var producer sarama.SyncProducer
 
 //export FLBPluginRegister
